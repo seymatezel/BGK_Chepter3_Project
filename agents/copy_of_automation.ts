@@ -1,4 +1,4 @@
-"""
+/**
 /**
  * n8n Otomasyon Servisi - Gelişmiş ve Dayanıklı Versiyon
  */
@@ -74,5 +74,5 @@ export async function subscribeToBulletin(email: string) {
     console.error('❌ n8n Bülten Hatası:', error);
     return false;
   }
-  """
 }
+*/
