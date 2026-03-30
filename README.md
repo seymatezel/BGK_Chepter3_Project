@@ -65,22 +65,26 @@ npm run dev
 ```
 
 ## 📁 Proje Yapısı
+## 📁 Proje Yapısı
 ```
 features/
 ├── src/
-│   ├── App.tsx              ← Ana uygulama
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── index.css
+│   ├── types.ts
 │   ├── components/
-│   │   ├── AnalysisForm.tsx ← Analiz formu
-│   │   ├── ResultCard.tsx   ← Sonuç kartı
-│   │   ├── History.tsx      ← Geçmiş analizler
+│   │   ├── AnalysisForm.tsx
+│   │   ├── ResultCard.tsx
+│   │   ├── History.tsx
 │   │   └── ErrorBoundary.tsx
 │   ├── services/
-│   │   ├── gemini.ts        ← AI entegrasyonu
-│   │   └── automation.ts    ← n8n otomasyonu
-│   ├── types.ts             ← TypeScript tipleri
-│   └── index.css
+│   │   ├── gemini.ts
+│   │   └── automation.ts
+│   └── lib/
+│       └── utils.ts
 ├── .env.example
-└── package.json
+└── .gitignore
 ```
 
 ## Özellikler
