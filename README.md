@@ -64,27 +64,43 @@ GEMINI_API_KEY=senin_api_anahtarin
 npm run dev
 ```
 
-## 📁 Proje Yapısı
-## 📁 Proje Yapısı
+## 📁 Proje Yapısı 
+
 ```
-features/
-├── src/
-│   ├── App.tsx
-│   ├── main.tsx
-│   ├── index.css
-│   ├── types.ts
-│   ├── components/
-│   │   ├── AnalysisForm.tsx
-│   │   ├── ResultCard.tsx
-│   │   ├── History.tsx
-│   │   └── ErrorBoundary.tsx
-│   ├── services/
-│   │   ├── gemini.ts
-│   │   └── automation.ts
-│   └── lib/
-│       └── utils.ts
-├── .env.example
-└── .gitignore
+BGK_Chepter3_Project/
+├── README.md
+├── idea.md
+├── prd.md
+├── user-flow.md
+├── tech-stack.md
+├── agents/
+│   ├── agentsREADME.md
+│   └── copy_of_automation.ts    --- otomasyon kodu
+└── features/
+    ├── src/
+    │   ├── App.tsx
+    │   ├── main.tsx
+    │   ├── index.css
+    │   ├── types.ts
+    │   ├── components/
+    │   │   ├── AnalysisForm.tsx
+    │   │   ├── ResultCard.tsx
+    │   │   ├── History.tsx
+    │   │   └── ErrorBoundary.tsx
+    │   ├── services/
+    │   │   ├── gemini.ts
+    │   │   └── automation.ts
+    │   └── lib/
+    │       └── utils.ts
+    ├── .env.example
+    └── .gitignore
+```
+
+
+## GitHub'a Yükleme
+```
+✅ agents/README.md → yukarıdaki içerik
+✅ README.md        → dosya yapısı güncellendi
 ```
 
 ## Özellikler
