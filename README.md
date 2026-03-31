@@ -2,10 +2,10 @@
 
 ## TrustCheck - Dijital Güvenlik Rehberiniz
 
-TrustCheck, yaşlılar ve teknolojiye uzak bireyler için
-tasarlanmış AI destekli dolandırıcılık tespit web
-uygulamasıdır. Şüpheli SMS, e-posta, link ve QR kodları
-saniyeler içinde analiz eder.
+TrustCheck, yaşlılar ve teknolojiye uzak bireyler
+için tasarlanmış AI destekli dolandırıcılık tespit
+web uygulamasıdır. Şüpheli SMS, e-posta, link ve
+QR kodları saniyeler içinde analiz eder.
 
 ## Problem
 Yaşlılar ve teknolojiye uzak bireyler sahte SMS,
@@ -23,9 +23,8 @@ TrustCheck, Gemini AI kullanarak:
 - Tüm analizleri yerel olarak kaydeder
 - Tespit edilen dolandırıcılıkları anonim ihbar eder
 
-##  Canlı Demo
+## Canlı Demo
 **Yayın Linki:** https://trustcheckapp.vercel.app
-
 **Demo Video:** [Yakında eklenecek]
 
 ## 🛠 Kullanılan Teknolojiler
@@ -37,7 +36,7 @@ TrustCheck, Gemini AI kullanarak:
 - Tailwind CSS
 - Vercel (deploy)
 
-## Nasıl Çalıştırılır?
+## ⚙️ Nasıl Çalıştırılır?
 
 ### 1. Repoyu klonla
 ```bash
@@ -68,24 +67,42 @@ npm run dev
 
 ## Proje Yapısı
 ```
-features/
-├── src/
-│   ├── App.tsx
-│   ├── main.tsx
-│   ├── index.css
-│   ├── types.ts
-│   ├── components/
-│   │   ├── AnalysisForm.tsx
-│   │   ├── ResultCard.tsx
-│   │   ├── History.tsx
-│   │   └── ErrorBoundary.tsx
-│   ├── services/
-│   │   ├── gemini.ts
-│   │   └── automation.ts
-│   └── lib/
-│       └── utils.ts
-├── .env.example
-└── .gitignore
+BGK_Chepter3_Project/
+├── README.md
+├── idea.md
+├── prd.md
+├── user-flow.md
+├── tech-stack.md
+├── agents/
+│   ├── agentsREADME.md
+│   └── automation.ts
+├── assets/
+│   ├── assentsREADME.md
+│   ├── user-flow-diagram.png
+│   └── screenshots/
+│       ├── ana-sayfa.png
+│       ├── mesaj-analizi.png
+│       ├── tehlikeli-sonuc.png
+│       ├── link-kontrolu.png
+│       └── gecmis-analizler.png
+└── features/
+    ├── src/
+    │   ├── App.tsx
+    │   ├── main.tsx
+    │   ├── index.css
+    │   ├── types.ts
+    │   ├── components/
+    │   │   ├── AnalysisForm.tsx
+    │   │   ├── ResultCard.tsx
+    │   │   ├── History.tsx
+    │   │   └── ErrorBoundary.tsx
+    │   ├── services/
+    │   │   ├── gemini.ts
+    │   │   └── automation.ts
+    │   └── lib/
+    │       └── utils.ts
+    ├── .env.example
+    └── .gitignore
 ```
 
 ## Özellikler
@@ -94,8 +111,9 @@ features/
 - QR Kod Analizi
 - Geçmiş Analizler (localStorage, maks. 50 kayıt)
 - Sesli Okuma (yaşlı kullanıcılar için)
-- Anonim Dolandırıcılık İhbarı (n8n otomasyonu)
+- Anonim Dolandırıcılık İhbarı (n8n)
 - Haftalık Güvenlik Bülteni aboneliği
 - Türkiye'ye özgü tehdit tespiti
 - Çok dilli destek (otomatik algılama)
 - Mobil uyumlu tasarım
+- Hata yönetimi (ErrorBoundary)
