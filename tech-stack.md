@@ -1,84 +1,81 @@
-# TrustCheck — tech-stack.md
+# Emin Ol — tech-stack.md
 
 ## Teknoloji Seçimi ve Gerekçesi
 
 ### Frontend: React + TypeScript
-TypeScript ile tip güvenliği sağlanıyor. Bileşen
-tabanlı yapı sayesinde AnalysisForm, ResultCard,
-History ayrı ayrı geliştirilebildi. Bakımı kolay,
-ölçeklenebilir mimari.
+TypeScript ile tip güvenliği sağlanıyor.
+Bileşen tabanlı yapı sayesinde AnalysisForm,
+ResultCard, History ayrı geliştirilebildi.
 
 ### Animasyon: Framer Motion
-Sayfa geçişleri, sonuç kartı girişleri ve form
-animasyonları için kullanıldı. Yaşlı kullanıcıların
-nerede olduklarını anlamalarına yardımcı olan
-akıcı geçişler sağlıyor.
+Sayfa geçişleri ve sonuç kartı animasyonları.
+Yaşlı kullanıcıların nerede olduklarını
+anlamalarına yardımcı olan akıcı geçişler.
 
 ### AI: Gemini API (Google AI Studio)
-Ücretsiz. Hem metin hem görsel analizi yapabiliyor
-(multimodal). Türkçe dil desteği güçlü. API anahtarı
-Google AI Studio'dan dakikalar içinde alınıyor.
-Model: gemini-2.0-flash
+Ücretsiz. Metin + görsel analizi (multimodal).
+Türkçe dil desteği güçlü.
 
 ### Otomasyon: n8n
-Kod yazmadan görsel otomasyon akışları:
-- Dolandırıcılık ihbarları webhook ile toplanıyor.
-- Bülten abonelikleri webhook ile kaydediliyor.
-n8n.io üzerinden ücretsiz self-hosted kurulum.
+- Dolandırıcılık ihbarları webhook ile toplanıyor
+- Bülten abonelikleri webhook ile kaydediliyor
+Kod yazmadan görsel otomasyon akışları.
 
-### Veri Saklama: localStorage
-Sunucu gerektirmiyor. Kullanıcının tarayıcısında
-saklanıyor. KVKK riski yok. Maksimum 50 kayıt,
-51. kayıtta en eski siliniyor.
+### Veri: localStorage
+Sunucu gerektirmiyor. KVKK riski yok.
+Maksimum 50 kayıt, 51. kayıtta en eski siliniyor.
 
 ### Deploy: Vercel
-GitHub'a bağlı, her push'ta otomatik deploy.
-Ücretsiz plan yeterli. Hızlı CDN.
+GitHub'a bağlı, otomatik deploy. Ücretsiz plan.
 
 ### Stil: Tailwind CSS
-Utility-first yaklaşım. Responsive tasarım kolay.
 Büyük font boyutları yaşlı kullanıcı dostu.
+Responsive tasarım kolay.
 
 ## Dosya Yapısı
 ```
-features/
-├── app/
-│   ├── App.tsx
-│   ├── main.tsx
-│   ├── index.css
-│   ├── type.ts
-│   ├── components/
-│   │   ├── AnalysisForm.tsx
-│   │   ├── ResultCard.tsx
-│   │   ├── History.tsx
-│   │   └── ErrorBoundary.tsx
-│   ├── services/
-│   │   ├── gemini.ts
-│   │   └── automation.ts
-│   ├── liraryb/
-│   │   └── utils.ts
-│   ├── types.ts
-│   └── index.css
-├── .env.example
-└── .gitgnore
+BGK_Chepter3_Project/
+├── README.md
+├── idea.md
+├── prd.md
+├── user-flow.md
+├── tech-stack.md
+├── agents/
+│   ├── README.md
+│   └── automation.ts
+└── features/
+    ├── src/
+    │   ├── App.tsx
+    │   ├── main.tsx
+    │   ├── index.css
+    │   ├── types.ts
+    │   ├── components/
+    │   │   ├── AnalysisForm.tsx
+    │   │   ├── ResultCard.tsx
+    │   │   ├── History.tsx
+    │   │   └── ErrorBoundary.tsx
+    │   ├── services/
+    │   │   ├── gemini.ts
+    │   │   └── automation.ts
+    │   └── lib/
+    │       └── utils.ts
+    ├── .env.example
+    └── .gitignore
 ```
 
-## Kurulum Adımları
+## Kurulum
+```bash
+# 1. Klonla
+git clone https://github.com/seymatezel/BGK_Chepter3_Project.git
+cd BGK_Chepter3_Project/features
 
-### 1. Google AI Studio — API Anahtarı
-1. aistudio.google.com adresine git
-2. "Get API Key" → "Create API Key"
-3. Anahtarı .env dosyasına ekle:
-   GEMINI_API_KEY=senin_anahtarin
+# 2. Bağımlılıkları yükle
+npm install
 
-### 2. n8n Kurulumu (Opsiyonel)
-1. n8n.io üzerinden hesap aç
-2. İhbar ve bülten için webhook oluştur
-3. URL'leri .env'e ekle:
-   VITE_N8N_REPORT_URL=webhook_url
-   VITE_N8N_SUBSCRIBE_URL=webhook_url
+# 3. Environment ayarla
+cp .env.example .env
+# GEMINI_API_KEY ekle
 
-### 3. Vercel Deploy
-1. vercel.com → GitHub ile bağlan
-2. Repoyu seç, environment variables ekle
-3. Deploy et
+# 4. Başlat
+npm run dev
+```
