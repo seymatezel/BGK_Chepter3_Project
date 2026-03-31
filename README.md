@@ -1,11 +1,11 @@
-# TrustCheck — README.md
+# Emin Ol — README.md
 
-## TrustCheck - Dijital Güvenlik Rehberiniz
+## Emin Ol - Dijital Güvenlik Rehberiniz
 
-TrustCheck, yaşlılar ve teknolojiye uzak bireyler için
+Emin Ol, yaşlılar ve teknolojiye uzak bireyler için
 tasarlanmış AI destekli dolandırıcılık tespit web
-uygulamasıdır. Şüpheli SMS, e-posta, link ve QR kodları
-saniyeler içinde analiz eder.
+uygulamasıdır. Şüpheli SMS, e-posta, link ve QR
+kodları saniyeler içinde analiz eder.
 
 ## Problem
 Yaşlılar ve teknolojiye uzak bireyler sahte SMS,
@@ -14,18 +14,19 @@ araçlar (Scamio, Norton Genie) Türkiye'ye özgü
 dolandırıcılık kalıplarını tanımıyor.
 
 ## Çözüm
-TrustCheck, Gemini AI kullanarak:
-- Mesaj metinlerini ve görsellerini analiz eder.
-- Şüpheli linkleri değerlendirir.
-- QR kodları tehdit açısından inceler.
-- Türkiye'ye özgü dolandırıcılık kalıplarını tanır.
-- Sade Türkçe ile sonuç ve öneri sunar.
-- Tüm analizleri yerel olarak kaydeder.
+Emin Ol, Gemini AI kullanarak:
+- Mesaj metinlerini ve görsellerini analiz eder
+- Şüpheli linkleri değerlendirir
+- QR kodları tehdit açısından inceler
+- Türkiye'ye özgü dolandırıcılık kalıplarını tanır
+- Sade Türkçe ile sonuç ve öneri sunar
+- Tüm analizleri yerel olarak kaydeder
+- Tespit edilen dolandırıcılıkları anonim ihbar eder
 
 ## Canlı Demo
-**Yayın Linki🌐:** https://trustcheckapp.vercel.app
+**Yayın Linki:** https://trustcheckapp.vercel.app
 
-**Demo Video📽️:** [Yakında eklenecek]
+**Demo Video:** [Yakında eklenecek]
 
 ## 🛠 Kullanılan Teknolojiler
 - React + TypeScript
@@ -50,13 +51,14 @@ npm install
 ```
 
 ### 3. Environment değişkenlerini ayarla
-`.env.example` dosyasını kopyala:
 ```bash
 cp .env.example .env
 ```
-`.env` dosyasına Gemini API anahtarını ekle:
+`.env` dosyasına ekle:
 ```
 GEMINI_API_KEY=senin_api_anahtarin
+VITE_N8N_REPORT_URL=n8n_ihbar_webhook_url
+VITE_N8N_SUBSCRIBE_URL=n8n_bulten_webhook_url
 ```
 
 ### 4. Uygulamayı başlat
@@ -64,8 +66,7 @@ GEMINI_API_KEY=senin_api_anahtarin
 npm run dev
 ```
 
-## 📁 Proje Yapısı 
-
+## Proje Yapısı
 ```
 BGK_Chepter3_Project/
 ├── README.md
@@ -74,8 +75,8 @@ BGK_Chepter3_Project/
 ├── user-flow.md
 ├── tech-stack.md
 ├── agents/
-│   ├── agentsREADME.md
-│   └── copy_of_automation.ts    --- otomasyon kodu
+│   ├── README.md
+│   └── automation.ts
 └── features/
     ├── src/
     │   ├── App.tsx
@@ -96,20 +97,13 @@ BGK_Chepter3_Project/
     └── .gitignore
 ```
 
-
-## GitHub'a Yükleme
-```
-✅ agents/README.md → yukarıdaki içerik
-✅ README.md        → dosya yapısı güncellendi
-```
-
 ## Özellikler
-- Mesaj & Görsel Analizi (metin + ekran görüntüsü)
+- Mesaj & Görsel Analizi
 - Link Kontrolü
 - QR Kod Analizi
 - Geçmiş Analizler (localStorage, maks. 50 kayıt)
 - Sesli Okuma (yaşlı kullanıcılar için)
-- Dolandırıcılık İhbarı (n8n otomasyonu)
+- Anonim Dolandırıcılık İhbarı (n8n)
 - Haftalık Güvenlik Bülteni aboneliği
 - Türkiye'ye özgü tehdit tespiti
 - Çok dilli destek (otomatik algılama)
