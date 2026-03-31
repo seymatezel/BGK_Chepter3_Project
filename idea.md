@@ -1,4 +1,4 @@
-# Emin Ol — idea.md
+# TrustCheck — idea.md
 
 ## Problem
 Yaşlılar ve teknolojiye uzak bireyler, SMS/e-posta
@@ -27,9 +27,11 @@ Dört farklı şekilde analiz yapar:
 
 **Mesaj & Görsel Analizi**
 Kullanıcının yapıştırdığı SMS veya e-posta
-metnini ya da yüklediği görseli okur. Sahte kurum
-taklidi, aciliyet dili, kimlik/para talebi,
-şüpheli link ve dil hatalarını tespit eder.
+metnini ya da yüklediği görseli okur. Sahte
+kurum taklidi, aciliyet dili, kimlik/para
+talebi, şüpheli link ve dil hatalarını tespit
+eder. Metinde link veya QR kod varlığını
+tespit ederse ilgili bölüme yönlendirir.
 
 **Link Kontrolü**
 Kullanıcının yapıştırdığı şüpheli URL'yi
@@ -37,7 +39,8 @@ değerlendirir, tehdit tespiti yapar.
 
 **QR Kod Analizi**
 Kullanıcının yüklediği QR kod görselini okur,
-içindeki URL'yi tespit eder, tehdit analizi yapar.
+içindeki URL'yi tespit eder, tehdit analizi
+yapar.
 
 **Sesli Okuma**
 Sonuç kartını Türkçe olarak sesli okur —
@@ -57,12 +60,13 @@ Tüm analizlerde:
 | Norton Genie | Hızlı analiz | Uygulama gerektirir |
 | TruthScan | AI phishing tespiti | Kurumsal odaklı |
 
-**Emin Ol'un farkı:**
-- Türkiye'ye özgü yerel kalıpları tanıyan tek araç.
-- Hesap/kurulum gerektirmiyor.
-- Yaşlı dostu arayüz + sesli okuma.
-- n8n ile dolandırıcılık ihbar otomasyonu.
-- Haftalık güvenlik bülteni aboneliği.
+**TrustCheck'in farkı:**
+- Türkiye'ye özgü yerel kalıpları tanıyan tek araç
+- Hesap/kurulum gerektirmiyor
+- Yaşlı dostu arayüz + sesli okuma
+- n8n ile dolandırıcılık ihbar otomasyonu
+- Haftalık güvenlik bülteni aboneliği
+- Geçmiş analizleri localStorage'da saklıyor
 
 ## Başarı Kriteri
 Kullanıcı şüpheli bir mesajı yapıştırıp 10 saniye
