@@ -1,10 +1,11 @@
-# TrustCheck — user-flow.md
+# Emin Ol — user-flow.md
 
 ## Uygulama Açılışında
-Kullanıcı siteye girer. Koyu header'da TrustCheck
-logosu ve sağda "Eski Kontrollerim" butonu görünür.
-Ana içerikte başlık, açıklama ve üç kart:
-Mesaj İncele, Link Kontrolü, Karekod Tara.
+Kullanıcı siteye girer. Koyu header'da
+"Emin Ol" logosu ve sağda "Eski Kontrollerim"
+butonu görünür. Ana içerikte başlık, açıklama
+ve üç kart: Mesaj İncele, Link Kontrolü,
+Karekod Tara.
 
 ## Akış 1 — Mesaj İncele
 1. Kullanıcı "Mesaj İncele" kartına basar.
@@ -14,15 +15,14 @@ Mesaj İncele, Link Kontrolü, Karekod Tara.
 4. "Bakıyoruz, bir saniye..." animasyonu görünür.
 5. Sonuç kartı çıkar:
    🔴 TEHLİKELİ / 🟡 ŞÜPHELİ / 🟢 GÜVENLİ
-   - Neden? (sade Türkçe, 2-3 cümle)
+   - Neden? (sade Türkçe)
    - Ne yapmalısınız? (tek öneri)
    - 🔊 Sesli Dinle butonu
-6. Mesajda link tespit edilirse →
-   💡 Link Kontrolü bölümüne yönlendirme notu çıkar.
-7. Mesajda QR kod tespit edilirse →
-   📷 Karekod Kontrolü bölümüne yönlendirme notu çıkar.
-8. TEHLİKELİ sonucunda → İhbar butonu görünür
-   (detay için Akış 7'ye bak).
+6. Link tespit edilirse →
+   💡 Link Kontrolü'ne yönlendirme notu çıkar.
+7. QR tespit edilirse →
+   📷 Karekod Kontrolü'ne yönlendirme notu çıkar.
+8. TEHLİKELİ sonucunda → ihbar butonu çıkar.
 9. Analiz otomatik geçmişe kaydedilir.
 
 ## Akış 2 — Link Kontrolü
@@ -30,34 +30,32 @@ Mesaj İncele, Link Kontrolü, Karekod Tara.
 2. Şüpheli linki kutuya yapıştırır.
 3. "Linki Kontrol Et" butonuna basar.
 4. Sonuç kartı çıkar (aynı format).
-5. TEHLİKELİ sonucunda → İhbar butonu görünür.
+5. TEHLİKELİ sonucunda → ihbar butonu çıkar.
 6. Analiz otomatik geçmişe kaydedilir.
 
-## Akış 3 — Karekod (QR) Tara
+## Akış 3 — Karekod Tara
 1. Kullanıcı "Karekod Tara" kartına basar.
 2. QR kod fotoğrafını yükler.
 3. "QR Kodu Kontrol Et" butonuna basar.
 4. AI görselden kodu okur, tehdit analizi yapar.
 5. Sonuç kartı çıkar (aynı format).
-6. TEHLİKELİ sonucunda → İhbar butonu görünür.
+6. TEHLİKELİ sonucunda → ihbar butonu çıkar.
 7. Analiz otomatik geçmişe kaydedilir.
 
 ## Akış 4 — Eski Kontrollerim
-1. Kullanıcı sağ üstteki "Eski Kontrollerim"
-   butonuna basar.
+1. Sağ üstteki "Eski Kontrollerim" butonuna basar.
 2. Sağdan kayan panel açılır.
 3. Geçmiş analizler listelenir:
    tarih + içerik özeti + sonuç rengi
-4. İstenen kayıt tıklanınca sonuç tekrar görünür.
-5. Çöp kutusu ikonu ile kayıt silinebilir.
+4. Kayıt tıklanınca sonuç tekrar görünür.
+5. Çöp kutusu ile kayıt silinebilir.
 6. Panel dışına tıklanınca kapanır.
-7. Geçmiş boşsa:
-   "Henüz bir analiz yapmadınız." mesajı görünür.
+7. Geçmiş boşsa: "Henüz analiz yapmadınız."
 
 ## Akış 5 — Sesli Okuma
 1. Sonuç kartında 🔊 ikonuna basılır.
-2. Sonuç Türkçe sesli okunur:
-   "Sonuç: TEHLİKELİ. Neden: ... Ne yapmalısınız: ..."
+2. "Sonuç: TEHLİKELİ. Neden:... Ne yapmalısınız:..."
+   Türkçe sesli okunur.
 3. Tekrar basılınca durur.
 
 ## Akış 6 — Bültene Katıl
@@ -68,65 +66,31 @@ Mesaj İncele, Link Kontrolü, Karekod Tara.
 5. "Aramıza hoş geldiniz! 🛡️" mesajı görünür.
 
 ## Akış 7 — Dolandırıcılık İhbarı
-Bu özellik TEHLİKELİ sonuçlarda otomatik çıkar
-ve topluluğu korumaya yönelik çalışır.
 ```
 TEHLİKELİ sonuç çıkar
         ↓
-Sonuç kartının altında buton görünür:
-"📢 Bu Dolandırıcılığı İhbar Et"
+"📢 Bu Dolandırıcılığı İhbar Et" butonu görünür
         ↓
 Kullanıcı butona basar
         ↓
-Arka planda n8n webhook'a şu veriler gider:
-- Mesajın içeriği (anonim, ilk 1000 karakter)
+n8n webhook'a gider (anonim):
+- Mesaj içeriği (ilk 1000 karakter)
 - Sonuç: TEHLİKELİ
 - Neden tehlikeli olduğu
-- Tarih ve saat
-- Platform: TrustCheck Web
+- Tarih/saat
+- Platform: Emin Ol Web
         ↓
-n8n bu verileri toplar ve kaydeder
-(Google Sheets veya veritabanı)
+"✅ İhbar Edildi" olarak güncellenir
         ↓
-Buton "✅ İhbar Edildi" olarak güncellenir
-        ↓
-Altında küçük not görünür:
-"İhbarlar anonim olarak toplanır ve
- topluluğu uyarmak için kullanılır."
+"İhbarlar anonim toplanır, topluluk
+ uyarıları için kullanılır." notu görünür
 ```
 
-**Neden bu özellik var?**
-Bir kullanıcı yeni bir dolandırıcılık tespit ettiğinde
-bu bilgi anonim olarak toplanır. Biriken veriler
-topluluğu uyarmak ve AI'ın tehdit tespitini
-güçlendirmek için kullanılabilir. Kullanıcı
-kişisel bilgi paylaşmaz, sadece mesajın içeriği
-ve analiz sonucu iletilir.
-
-## Genel Hata Durumları
-
-### Boş Kutuyla Buton Basılırsa
+## Hata Durumları
 ```
-"Lütfen önce bir mesaj yapıştırın
- veya görsel yükleyin."
+Boş kutu → "Lütfen önce mesaj yapıştırın."
+API hatası → "Tekrar deneyin."
+n8n hatası → "İhbar gönderilemedi."
+             (uygulama çalışmaya devam eder)
+Yanlış dosya → "PNG, JPG veya JPEG yükleyin."
 ```
-
-### API Bağlantısı Yoksa
-```
-"Analiz sırasında bir hata oluştu.
- Lütfen tekrar deneyin."
-```
-
-### n8n Bağlantısı Yoksa
-```
-"İhbar gönderilirken bir sorun oluştu."
-(uygulama çalışmaya devam eder)
-```
-
-### Desteklenmeyen Dosya Yüklenirse
-```
-"Lütfen PNG, JPG veya JPEG
- formatında dosya yükleyin."
-```
-```
-
