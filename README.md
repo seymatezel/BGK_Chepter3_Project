@@ -25,7 +25,7 @@ TrustCheck, Gemini AI kullanarak:
 
 ## Canlı Demo
 **Yayın Linki:** https://trustcheckapp.vercel.app
-**Demo Video:** [Yakında eklenecek]
+**Demo Video:** https://youtu.be/gyXj92qgMgM
 
 ## 🛠 Kullanılan Teknolojiler
 - React + TypeScript
@@ -36,7 +36,7 @@ TrustCheck, Gemini AI kullanarak:
 - Tailwind CSS
 - Vercel (deploy)
 
-## ⚙️ Nasıl Çalıştırılır?
+## Nasıl Çalıştırılır?
 
 ### 1. Repoyu klonla
 ```bash
