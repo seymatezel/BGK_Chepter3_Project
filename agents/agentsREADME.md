@@ -1,8 +1,8 @@
 # agents/README.md
 
-## TrustCheck — Otomasyon Akışları
+## Emin Ol — Otomasyon Akışları
 
-TrustCheck, n8n kullanarak iki otomasyon akışı
+Emin Ol, n8n kullanarak iki otomasyon akışı
 çalıştırır. Bu akışlar kod yazmadan görsel olarak
 kurulur ve webhook üzerinden tetiklenir.
 
