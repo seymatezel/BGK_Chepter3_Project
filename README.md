@@ -77,14 +77,7 @@ BGK_Chepter3_Project/
 │   ├── agentsREADME.md
 │   └── automation.ts
 ├── assets/
-│   ├── assentsREADME.md
-│   ├── user-flow-diagram.png
-│   └── screenshots/
-│       ├── ana-sayfa.png
-│       ├── mesaj-analizi.png
-│       ├── tehlikeli-sonuc.png
-│       ├── link-kontrolu.png
-│       └── gecmis-analizler.png
+│   └── assentsREADME.md
 └── features/
     ├── src/
     │   ├── App.tsx
